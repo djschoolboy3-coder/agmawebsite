@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acquire a Digital Agency — Gunderson &amp; Partners</title>
+<meta name="description" content="Skip the listing-site roulette. Get matched to vetted, de-risked digital agencies with SBA financing arranged — so you can move on the right deal fast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/logo-mark.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header id="header" class="on-dark">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><img src="img/logo-mark.png" alt="Gunderson &amp; Partners"></span>
+      <span class="logo-txt"><span class="logo-name">GUNDERSON</span><span class="logo-sub">&amp; PARTNERS</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="sell.html" class="lk">Sell an agency</a>
+      <a href="buy.html" class="lk current">Acquire an agency</a>
+      <a href="index.html#why" class="lk">Why us</a>
+      <a href="#faq" class="lk">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="sell.html" class="btn btn-outline">I'm a seller</a>
+      <a href="#book" class="btn btn-ember">See opportunities <span class="ar">→</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="sell.html">Sell an agency</a>
+    <a href="buy.html">Acquire an agency</a>
+    <a href="index.html#why">Why us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book" class="btn btn-ember">See opportunities →</a>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="phero">
+  <div class="phero-grid"></div>
+  <div class="wrap">
+    <div class="crumb reveal"><a href="index.html">Home</a> · <span>Acquire an agency</span></div>
+    <h1 class="reveal">Acquire a <em>real</em> business — not a rebuild project.</h1>
+    <p class="reveal">Forget scrolling brokerage listings full of owner-dependent businesses with hidden problems. Get matched to vetted, de-risked digital agencies — with SBA financing arranged so you can move when the right deal shows up.</p>
+    <div class="phero-ctas reveal">
+      <a href="#calc" class="btn btn-ember">Run the numbers <span class="ar">→</span></a>
+      <a href="#book" class="btn btn-ghost-light">Get matched to deals</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RETURNS CALCULATOR ============ -->
+<section class="sec alt" id="calc">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Acquisition returns calculator</span>
+      <h2>What could <em>this acquisition</em> actually return?</h2>
+      <p class="sub">Plug in target agency size, your down payment, and SBA financing terms — see annual cash flow after debt service, cash-on-cash return, and payback period.</p>
+    </div>
+    <div class="calc reveal-scale">
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <h3>Target deal</h3>
+          <p class="hint">Use real or hypothetical numbers — adjust to model any scenario.</p>
+
+          <div class="field">
+            <label>Agency purchase price <span class="val" id="priceVal">$1.2M</span></label>
+            <div class="range-wrap">
+              <input type="range" id="price" min="200000" max="10000000" step="50000" value="1200000">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Agency annual net profit <span class="val" id="profitVal">$400K</span></label>
+            <div class="range-wrap">
+              <input type="range" id="profit" min="50000" max="3000000" step="10000" value="400000">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Your down payment <span class="val" id="downVal">10%</span></label>
+            <div class="range-wrap">
+              <input type="range" id="down" min="10" max="100" step="5" value="10">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>SBA rate (annual) <span class="val" id="rateVal">11.0%</span></label>
+            <div class="range-wrap">
+              <input type="range" id="rate" min="6" max="14" step="0.25" value="11">
+            </div>
+          </div>
+
+          <div class="field">
+            <label style="margin-bottom:14px">Loan term</label>
+            <div class="seg" id="termSeg">
+              <button data-v="7" type="button">7 yrs</button>
+              <button data-v="10" class="active" type="button">10 yrs</button>
+              <button data-v="15" type="button">15 yrs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <h3>Estimated returns</h3>
+          <p class="hint">Year-one cash flow projection after debt service.</p>
+          <div class="result-big" id="cocOut">38%</div>
+          <div class="result-range" id="cocLabel">Cash-on-cash return (year 1)</div>
+          <div class="result-rows">
+            <div class="result-row"><span class="rl">Your cash invested</span><span class="rv" id="downOut">$120K</span></div>
+            <div class="result-row"><span class="rl">Annual debt service</span><span class="rv" id="debtOut">$179K</span></div>
+            <div class="result-row"><span class="rl">Annual cash flow</span><span class="rv ember" id="cashOut">+$221K</span></div>
+            <div class="result-row"><span class="rl">Payback period</span><span class="rv" id="paybackOut">~7 mo</span></div>
+          </div>
+          <p class="result-note">Illustrative only. Actual returns depend on diligence, deal structure, working capital, and lender terms. We model your real scenario in detail before recommending an acquisition.</p>
+          <div class="calc-cta"><a href="#book" class="btn btn-ember">Get matched to real deals <span class="ar">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY BUY WITH US ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Why acquire with Gunderson</span>
+      <h2>The right agency, <em>the right way</em>.</h2>
+      <p class="sub">Acquiring a business is the highest-stakes purchase most people ever make. We don't want you buying a problem — and we don't want a deal we wouldn't recommend to family.</p>
+    </div>
+    <div class="cards stagger">
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 4.5 3.5 8.5 8 10 4.5-1.5 8-5.5 8-10V6l-8-4z" stroke="#E8633A" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>De-risked agencies</h3>
+        <p>Every agency we present has been through our readiness program — owner-independence, documented systems, defensible financials.</p>
+      </div>
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#E8633A" stroke-width="2"/><path d="M4 22c0-4 4-7 8-7s8 3 8 7" stroke="#E8633A" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Matched to fit</h3>
+        <p>Your goals, capital, and operational strengths get matched to agencies where you can actually create value — not just whichever listing is open.</p>
+      </div>
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="14" rx="2" stroke="#E8633A" stroke-width="2"/><path d="M3 10h18M8 6V4M16 6V4" stroke="#E8633A" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Financing arranged</h3>
+        <p>We work with SBA lenders that understand digital agencies, so you get pre-qualified terms before you tour a deal — not weeks after you fall in love with it.</p>
+      </div>
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12l4-4 4 4 4-4 4 4 2-2" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18l4-4 4 4 4-4 4 4 2-2" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/></svg></div>
+        <h3>Diligence handled</h3>
+        <p>Financial, operational, and legal diligence run by people who know how digital agencies actually work — what to look for, what to ignore, what kills deals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINANCING ============ -->
+<section class="sec dark" id="financing">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="reveal-l">
+        <span class="sec-eyebrow">SBA &amp; deal financing</span>
+        <h2>Most of the capital can come from <em>somewhere else</em>.</h2>
+        <p class="sub" style="margin-bottom:30px">An SBA 7(a) loan can fund up to 90% of a qualifying acquisition — meaning a $1M agency can be bought with as little as $100K down. We work with lenders who actually understand digital agencies and structure deals around the right blend of debt, seller financing, and your capital.</p>
+        <ul class="checklist">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Up to 90% LTV</strong> through SBA 7(a) for qualified buyers.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>10-year amortization</strong> on most digital agency acquisitions.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Seller financing</strong> commonly structured to bridge gaps and align incentives.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Pre-qualification</strong> before you tour deals — no surprises at the closing table.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Lenders fluent in digital agency businesses</strong> — they don't reject the cash flow they don't understand.</span></li>
+        </ul>
+      </div>
+
+      <!-- Abstract financing breakdown SVG -->
+      <div class="reveal-r" style="position:relative;padding:20px">
+        <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+          <defs>
+            <linearGradient id="grdSBA" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#E8633A"/>
+              <stop offset="100%" stop-color="#C44E2A"/>
+            </linearGradient>
+            <linearGradient id="grdSeller" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5C6466"/>
+              <stop offset="100%" stop-color="#3D4244"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Card backdrop -->
+          <rect x="20" y="20" width="440" height="380" rx="20" fill="rgba(242,241,239,0.04)" stroke="rgba(242,241,239,0.12)" stroke-width="1"/>
+
+          <text x="50" y="60" font-family="Fraunces,serif" font-size="16" fill="#F2F1EF" font-weight="500">Typical capital stack</text>
+          <text x="50" y="78" font-family="Outfit,sans-serif" font-size="11" fill="#9AA0A2">$1M agency acquisition · illustrative</text>
+
+          <!-- Donut chart -->
+          <g transform="translate(240,230)">
+            <!-- SBA Loan 80% -->
+            <circle r="80" fill="none" stroke="#E8633A" stroke-width="28"
+                    stroke-dasharray="402 502" stroke-dashoffset="0" transform="rotate(-90)">
+              <animate attributeName="stroke-dasharray" from="0 502" to="402 502" dur="1.4s" fill="freeze"/>
+            </circle>
+            <!-- Seller Financing 10% -->
+            <circle r="80" fill="none" stroke="#9AA0A2" stroke-width="28"
+                    stroke-dasharray="50.2 502" stroke-dashoffset="-402" transform="rotate(-90)">
+              <animate attributeName="stroke-dasharray" from="0 502" to="50.2 502" dur="0.6s" begin="1.4s" fill="freeze"/>
+            </circle>
+            <!-- Down payment 10% -->
+            <circle r="80" fill="none" stroke="#F2F1EF" stroke-width="28"
+                    stroke-dasharray="50.2 502" stroke-dashoffset="-452.2" transform="rotate(-90)">
+              <animate attributeName="stroke-dasharray" from="0 502" to="50.2 502" dur="0.6s" begin="2s" fill="freeze"/>
+            </circle>
+
+            <!-- Center -->
+            <text x="0" y="-8" text-anchor="middle" font-family="Fraunces,serif" font-size="28" font-weight="500" fill="#F2F1EF">$1M</text>
+            <text x="0" y="14" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#9AA0A2">Purchase price</text>
+          </g>
+
+          <!-- Legend -->
+          <g font-family="Outfit,sans-serif" font-size="12">
+            <rect x="50" y="335" width="14" height="14" rx="3" fill="#E8633A"/>
+            <text x="72" y="346" fill="#F2F1EF">SBA 7(a) loan</text>
+            <text x="430" y="346" fill="#F2F1EF" text-anchor="end" font-weight="500">$800K (80%)</text>
+
+            <rect x="50" y="357" width="14" height="14" rx="3" fill="#9AA0A2"/>
+            <text x="72" y="368" fill="#F2F1EF">Seller financing</text>
+            <text x="430" y="368" fill="#F2F1EF" text-anchor="end" font-weight="500">$100K (10%)</text>
+
+            <rect x="50" y="379" width="14" height="14" rx="3" fill="#F2F1EF"/>
+            <text x="72" y="390" fill="#F2F1EF">Your down payment</text>
+            <text x="430" y="390" fill="#F2F1EF" text-anchor="end" font-weight="500">$100K (10%)</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">How it works</span>
+      <h2>From first call to <em>day one of ownership.</em></h2>
+      <p class="sub">A defined process so you can move fast on the right deal — and walk away from the wrong one.</p>
+    </div>
+    <div class="steps-row stagger">
+      <div class="step"><div class="step-no">01 · DISCOVERY</div><h4>Buyer profile</h4><p>We learn your goals, capital, operational strengths, and the kind of agency you're built to run successfully.</p></div>
+      <div class="step"><div class="step-no">02 · QUALIFICATION</div><h4>Financing pre-approval</h4><p>SBA pre-qualification with our lender network — so you can move when the right opportunity shows up.</p></div>
+      <div class="step"><div class="step-no">03 · MATCHING</div><h4>Vetted deal flow</h4><p>You see vetted, de-risked agencies that fit — not whatever happens to be on a listing site this week.</p></div>
+      <div class="step"><div class="step-no">04 · CLOSE</div><h4>Diligence &amp; close</h4><p>We run diligence, negotiate structure, manage financing, and close the deal — so you take over a real business.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEAD CAPTURE — BUYER INTAKE ============ -->
+<section class="lead" id="book">
+  <div class="wrap lead-wrap">
+    <div class="lead-grid">
+      <div class="lead-copy reveal-l">
+        <span class="sec-eyebrow">Get matched to real opportunities</span>
+        <h2>See deals that <em>actually</em> fit you.</h2>
+        <p>Tell us what you're looking for and what you can put to work. We'll come back with vetted opportunities that match your goals, capital, and operational strengths — and outline how financing would structure.</p>
+        <ul class="lead-bullets">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Free, confidential — no fee to be on our buyer list</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Pre-vetted agencies — not raw listing-site posts</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>SBA financing arranged in-house with agency-fluent lenders</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Response within one business day</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="lead-form lead-form-el reveal-r" data-form="buyer">
+        <div class="form-fields">
+          <h3>Get matched to deals</h3>
+          <p class="sub">Tell us what you're looking for — we'll send opportunities that fit.</p>
+
+          <div class="form-row split">
+            <div>
+              <label>First name</label>
+              <input type="text" name="first_name" placeholder="Alex" required>
+            </div>
+            <div>
+              <label>Last name</label>
+              <input type="text" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-row split">
+            <div>
+              <label>Target deal size</label>
+              <select name="deal_size" required>
+                <option value="">Select range</option>
+                <option value="<500k">Under $500K</option>
+                <option value="500k-1m">$500K – $1M</option>
+                <option value="1m-3m">$1M – $3M</option>
+                <option value="3m-10m">$3M – $10M</option>
+                <option value="10m+">$10M+</option>
+              </select>
+            </div>
+            <div>
+              <label>Capital available</label>
+              <select name="capital" required>
+                <option value="">Select range</option>
+                <option value="<100k">Under $100K</option>
+                <option value="100k-250k">$100K – $250K</option>
+                <option value="250k-500k">$250K – $500K</option>
+                <option value="500k-1m">$500K – $1M</option>
+                <option value="1m+">$1M+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Preferred agency type</label>
+            <select name="agency_type" required>
+              <option value="">Select interest</option>
+              <option value="any">Open to any digital agency</option>
+              <option value="smma">SMMA / Lead Gen</option>
+              <option value="seo">SEO / Content</option>
+              <option value="paid">Paid Media</option>
+              <option value="web">Web &amp; Design</option>
+              <option value="saas">SaaS / Software</option>
+              <option value="ai">AI / Automation</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label>Anything we should know? (optional)</label>
+            <textarea name="message" placeholder="Background, timeline, operational strengths, or specific criteria..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-ember form-submit">Get matched to deals <span class="ar">→</span></button>
+
+          <div class="form-trust">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 4.5 3.5 8.5 8 10 4.5-1.5 8-5.5 8-10V6l-8-4z" stroke="#9AA0A2" stroke-width="2" stroke-linejoin="round"/></svg>
+            Strictly confidential — your details are never shared without consent
+          </div>
+        </div>
+
+        <div class="success-msg">
+          <div class="success-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>You're on the list.</h4>
+          <p>We'll review your criteria and reach out within one business day with the first matches.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Buyer questions</span>
+      <h2>What buyers usually ask.</h2>
+    </div>
+    <div class="faq-wrap stagger">
+      <div class="faq-item"><button class="faq-q">How does the financing actually work? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">We work with SBA lenders who specialize in digital agency acquisitions. A typical structure: 80–90% bank financing, 5–10% seller financing, and 10–15% down from you. We pre-qualify you before you tour deals so there are no surprises at the closing table.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to be an operator already? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">Not necessarily, but operational experience helps both with lender approval and your odds of success post-close. We'll be honest with you about whether your background fits a particular deal — and what kinds of agencies make sense given where you're starting.</div></div></div>
+      <div class="faq-item"><button class="faq-q">What does it cost to work with you? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">Joining our buyer list and seeing matched opportunities is free. Our fee comes from the sell side at close, structured around a successful transaction. You don't pay us to get matched — only the deal pays us when it closes.</div></div></div>
+      <div class="faq-item"><button class="faq-q">How long does a typical acquisition take? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">From signed LOI to close, expect 60–120 days depending on financing structure and diligence complexity. From initial interest to LOI varies — we don't push you onto a deal that doesn't fit, and we don't rush you past diligence concerns.</div></div></div>
+      <div class="faq-item"><button class="faq-q">What kinds of agencies do you have available? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">The full digital agency space — SMMA, SEO, paid media, web/design, SaaS, AI &amp; automation. Sizes range from sub-$500K to mid-seven-figures and beyond. Inventory is confidential and rotates constantly; getting on the buyer list is how you see what's actually available.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><img src="img/logo-mark.png" alt="Gunderson &amp; Partners"></span>
+          <span class="logo-txt"><span class="logo-name" style="color:#F2F1EF">GUNDERSON</span><span class="logo-sub">&amp; PARTNERS</span></span>
+        </a>
+        <p>The boutique mergers &amp; acquisitions firm built exclusively for digital agencies.</p>
+      </div>
+      <div class="foot-col"><h5>Sellers</h5><a href="sell.html">Sell an agency</a><a href="sell.html#calc">Free valuation</a><a href="sell.html#readiness">Readiness program</a><a href="sell.html#process">Our process</a></div>
+      <div class="foot-col"><h5>Buyers</h5><a href="buy.html">Buy an agency</a><a href="#calc">Returns calculator</a><a href="#financing">Financing &amp; SBA</a><a href="#process">How it works</a></div>
+      <div class="foot-col"><h5>Firm</h5><a href="index.html#why">Why Gunderson</a><a href="#faq">FAQ</a><a href="#book">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span class="logo-name">GUNDERSON &amp; PARTNERS</span>
+      <span>© 2026 Gunderson &amp; Partners. All rights reserved.</span>
+    </div>
+    <p class="disclaimer">Calculator outputs are illustrative estimates only and do not constitute an offer of credit, return guarantee, or investment advice. All financing is subject to lender approval and individual qualification. Information is general and not legal, tax, or financial advice.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+/* ============ BUY — RETURNS CALCULATOR ============ */
+(function(){
+  'use strict';
+  const fmt = n => {
+    n = Math.round(n);
+    if (n >= 1e6) return '$' + (n/1e6).toFixed(n % 1e6 === 0 ? 0 : 1) + 'M';
+    if (n >= 1e3) return '$' + Math.round(n/1e3) + 'K';
+    return '$' + n;
+  };
+
+  const price = document.getElementById('price');
+  const profit = document.getElementById('profit');
+  const down = document.getElementById('down');
+  const rate = document.getElementById('rate');
+  if (!price || !profit || !down || !rate) return;
+
+  let term = 10;
+
+  function bindSeg(id, setter) {
+    const buttons = document.querySelectorAll('#' + id + ' button');
+    buttons.forEach(b => {
+      b.addEventListener('click', () => {
+        buttons.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        setter(parseFloat(b.dataset.v));
+        calc();
+      });
+    });
+  }
+
+  // Standard amortization formula: monthly payment
+  function monthlyPayment(principal, annualRate, years) {
+    if (annualRate === 0) return principal / (years * 12);
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    return principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  function calc() {
+    const P = parseFloat(price.value);
+    const NP = parseFloat(profit.value);
+    const dpPct = parseFloat(down.value);
+    const r = parseFloat(rate.value);
+
+    const downAmt = P * (dpPct / 100);
+    const loanAmt = P - downAmt;
+    const monthlyP = monthlyPayment(loanAmt, r, term);
+    const annualDebt = monthlyP * 12;
+    const annualCash = NP - annualDebt;
+    const coc = downAmt > 0 ? (annualCash / downAmt) * 100 : 0;
+    const paybackMonths = annualCash > 0 ? (downAmt / annualCash) * 12 : 0;
+
+    document.getElementById('priceVal').textContent = fmt(P);
+    document.getElementById('profitVal').textContent = fmt(NP);
+    document.getElementById('downVal').textContent = dpPct + '%';
+    document.getElementById('rateVal').textContent = r.toFixed(2) + '%';
+
+    document.getElementById('downOut').textContent = fmt(downAmt);
+    document.getElementById('debtOut').textContent = fmt(annualDebt);
+    document.getElementById('cashOut').textContent = (annualCash >= 0 ? '+' : '') + fmt(annualCash);
+    document.getElementById('cocOut').textContent = (isFinite(coc) ? Math.round(coc) : 0) + '%';
+
+    // Payback display
+    let paybackText;
+    if (annualCash <= 0) {
+      paybackText = 'Negative cash flow';
+    } else if (paybackMonths < 1) {
+      paybackText = '< 1 month';
+    } else if (paybackMonths < 24) {
+      paybackText = '~' + Math.round(paybackMonths) + ' mo';
+    } else {
+      paybackText = (paybackMonths / 12).toFixed(1) + ' yrs';
+    }
+    document.getElementById('paybackOut').textContent = paybackText;
+
+    if (window.__pulseEl) window.__pulseEl(document.getElementById('cocOut'));
+  }
+
+  bindSeg('termSeg', v => term = v);
+  price.addEventListener('input', calc);
+  profit.addEventListener('input', calc);
+  down.addEventListener('input', calc);
+  rate.addEventListener('input', calc);
+
+  calc();
+})();
+</script>
+</body>
+</html>

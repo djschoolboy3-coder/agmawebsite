@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell Your Digital Agency — Gunderson &amp; Partners</title>
+<meta name="description" content="Get a real valuation, engineer your agency's value upward, and exit to a pool of pre-qualified, funded buyers. Confidential process led by operators who've sold their own agency.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/logo-mark.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header id="header" class="on-dark">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><img src="img/logo-mark.png" alt="Gunderson &amp; Partners"></span>
+      <span class="logo-txt"><span class="logo-name">GUNDERSON</span><span class="logo-sub">&amp; PARTNERS</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="sell.html" class="lk current">Sell an agency</a>
+      <a href="buy.html" class="lk">Acquire an agency</a>
+      <a href="index.html#why" class="lk">Why us</a>
+      <a href="#faq" class="lk">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="buy.html" class="btn btn-outline">I'm a buyer</a>
+      <a href="#calc" class="btn btn-ember">Value my agency <span class="ar">→</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="sell.html">Sell an agency</a>
+    <a href="buy.html">Acquire an agency</a>
+    <a href="index.html#why">Why us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#calc" class="btn btn-ember">Value my agency →</a>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="phero">
+  <div class="phero-grid"></div>
+  <div class="wrap">
+    <div class="crumb reveal"><a href="index.html">Home</a> · <span>Sell an agency</span></div>
+    <h1 class="reveal">Exit your agency the way it deserves to be <em>exited</em>.</h1>
+    <p class="reveal">You did the hard part — you built something real. We make sure you exit it properly: a defensible valuation, the value engineered upward, and a clean, fast close to a pool of funded buyers.</p>
+    <div class="phero-ctas reveal">
+      <a href="#calc" class="btn btn-ember">Estimate my value <span class="ar">→</span></a>
+      <a href="#book" class="btn btn-ghost-light">Talk to us first</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUATION CALCULATOR ============ -->
+<section class="sec alt" id="calc">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Valuation estimator</span>
+      <h2>What could your agency <em>sell for?</em></h2>
+      <p class="sub">Adjust the inputs to see an illustrative valuation range. The factors that move it most — recurring revenue, owner-independence, and margin health — are exactly what our readiness program improves.</p>
+    </div>
+    <div class="calc reveal-scale">
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <h3>Your agency</h3>
+          <p class="hint">Rough numbers are fine — this is an estimate, not an appraisal.</p>
+
+          <div class="field">
+            <label>Annual revenue <span class="val" id="revVal">$600K</span></label>
+            <div class="range-wrap">
+              <input type="range" id="rev" min="100000" max="10000000" step="50000" value="600000">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Net profit margin <span class="val" id="marginVal">30%</span></label>
+            <div class="range-wrap">
+              <input type="range" id="margin" min="5" max="60" step="1" value="30">
+            </div>
+          </div>
+
+          <div class="field">
+            <label style="margin-bottom:14px">Revenue model</label>
+            <div class="seg" id="recurSeg">
+              <button data-v="0.82" type="button">Mostly project</button>
+              <button data-v="1.0" class="active" type="button">Mixed</button>
+              <button data-v="1.18" type="button">Mostly recurring</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label style="margin-bottom:14px">Owner involvement</label>
+            <div class="seg" id="ownerSeg">
+              <button data-v="0.82" type="button">Runs on me</button>
+              <button data-v="1.0" class="active" type="button">Some team</button>
+              <button data-v="1.15" type="button">Runs without me</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label style="margin-bottom:14px">Years in business</label>
+            <div class="seg" id="ageSeg">
+              <button data-v="0.92" type="button">&lt; 2 yrs</button>
+              <button data-v="1.0" class="active" type="button">2–5 yrs</button>
+              <button data-v="1.08" type="button">5+ yrs</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <h3>Estimated value</h3>
+          <p class="hint">Illustrative range based on your inputs.</p>
+          <div class="result-big" id="valMid">$440K</div>
+          <div class="result-range" id="valRange">Range: $374K – $537K</div>
+          <div class="result-rows">
+            <div class="result-row"><span class="rl">Annual net profit</span><span class="rv" id="profitOut">$180K</span></div>
+            <div class="result-row"><span class="rl">Applied multiple</span><span class="rv" id="multOut">2.4×</span></div>
+            <div class="result-row"><span class="rl">Upside if sale-ready</span><span class="rv ember" id="upsideOut">+$157K</span></div>
+          </div>
+          <p class="result-note">Estimates only. Real offers depend on diligence, market conditions, and deal structure. A free Gunderson valuation gives you the defensible number.</p>
+          <div class="calc-cta"><a href="#book" class="btn btn-ember">Get my real valuation <span class="ar">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY SELL / BENEFITS ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Why sell with Gunderson</span>
+      <h2>The benefits of a <em>well-engineered</em> exit.</h2>
+      <p class="sub">A sale isn't just a payday — done right, it's the highest-leverage financial event of your career. Here's what selling the Gunderson way actually gets you.</p>
+    </div>
+    <div class="cards stagger">
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Liquidity now</h3>
+        <p>Turn years of equity into cash — through an all-cash exit or structured financing — instead of waiting and hoping the market stays kind.</p>
+      </div>
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-9" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7h5v5" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>A higher multiple</h3>
+        <p>Our readiness work lifts the things buyers pay premiums for, so you sell at a stronger multiple than you'd reach listing as-is.</p>
+      </div>
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#E8633A" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#E8633A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Your time back</h3>
+        <p>Step out of the day-to-day grind. Exit the operational weight and free yourself for the next chapter — whatever that looks like.</p>
+      </div>
+      <div class="card-feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5z" stroke="#E8633A" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>A clean handoff</h3>
+        <p>Your clients and team go to a vetted buyer prepared to run the business — your legacy protected, not dismantled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ READINESS PROGRAM ============ -->
+<section class="sec dark" id="readiness">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="reveal-l">
+        <span class="sec-eyebrow">The readiness program</span>
+        <h2>We make you <em>sellable</em> — before you go to market.</h2>
+        <p class="sub" style="margin-bottom:30px">Most agencies aren't immediately sale-ready, and that's fine. Rather than turn you away, we engineer the value up first. Every lever below is something a buyer prices — and something we improve.</p>
+        <ul class="checklist">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Reduce owner-dependency</strong> — so the buyer isn't buying your calendar.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Stabilize recurring revenue</strong> — convert project work into retainers wherever possible.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Document fulfillment</strong> — systems, SOPs, and a team that operates without you.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Diversify client concentration</strong> — so no single account is the deal-killer in diligence.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Clean up financials</strong> — defensible recasts, accurate add-backs, audit-ready books.</span></li>
+        </ul>
+      </div>
+
+      <!-- Abstract animated SVG instead of stock photo -->
+      <div class="reveal-r" style="position:relative;padding:20px">
+        <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+          <defs>
+            <linearGradient id="grdEmber" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#E8633A" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#E8633A" stop-opacity=".25"/>
+            </linearGradient>
+            <linearGradient id="grdSlate" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3D4244"/>
+              <stop offset="100%" stop-color="#1F2223"/>
+            </linearGradient>
+          </defs>
+          <!-- Backdrop card -->
+          <rect x="20" y="20" width="440" height="380" rx="20" fill="rgba(242,241,239,0.04)" stroke="rgba(242,241,239,0.12)" stroke-width="1"/>
+
+          <!-- Axis grid -->
+          <g stroke="rgba(242,241,239,0.08)" stroke-width="1">
+            <line x1="60" y1="350" x2="420" y2="350"/>
+            <line x1="60" y1="290" x2="420" y2="290"/>
+            <line x1="60" y1="230" x2="420" y2="230"/>
+            <line x1="60" y1="170" x2="420" y2="170"/>
+            <line x1="60" y1="110" x2="420" y2="110"/>
+          </g>
+
+          <!-- Y-axis labels -->
+          <g font-family="Outfit, sans-serif" font-size="10" fill="#9AA0A2">
+            <text x="48" y="354" text-anchor="end">$0</text>
+            <text x="48" y="294" text-anchor="end">$1M</text>
+            <text x="48" y="234" text-anchor="end">$2M</text>
+            <text x="48" y="174" text-anchor="end">$3M</text>
+            <text x="48" y="114" text-anchor="end">$4M</text>
+          </g>
+
+          <!-- "Before" line (flat as-is) -->
+          <path d="M60 290 L130 285 L200 290 L270 285 L340 288 L420 285"
+                stroke="rgba(154,160,162,0.6)" stroke-width="2.5" fill="none"
+                stroke-dasharray="5 5" stroke-linecap="round"/>
+          <text x="430" y="288" font-family="Fraunces,serif" font-size="11" fill="#9AA0A2" font-style="italic">As-is</text>
+
+          <!-- "After" area fill -->
+          <path d="M60 290 L130 270 L200 240 L270 200 L340 150 L420 105 L420 350 L60 350 Z"
+                fill="url(#grdEmber)" opacity=".22"/>
+
+          <!-- "After" line (engineered) -->
+          <path d="M60 290 L130 270 L200 240 L270 200 L340 150 L420 105"
+                stroke="#E8633A" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+            <animate attributeName="stroke-dasharray" from="0 1000" to="1000 0" dur="2.4s" fill="freeze"/>
+          </path>
+
+          <!-- Data points -->
+          <g>
+            <circle cx="60" cy="290" r="5" fill="#E8633A"/>
+            <circle cx="130" cy="270" r="5" fill="#E8633A"/>
+            <circle cx="200" cy="240" r="5" fill="#E8633A"/>
+            <circle cx="270" cy="200" r="5" fill="#E8633A"/>
+            <circle cx="340" cy="150" r="5" fill="#E8633A"/>
+            <circle cx="420" cy="105" r="7" fill="#E8633A">
+              <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="420" cy="105" r="14" fill="#E8633A" opacity=".3">
+              <animate attributeName="r" values="12;22;12" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Label -->
+          <text x="350" y="92" font-family="Fraunces,serif" font-size="13" fill="#E8633A" font-weight="500">Sale-ready</text>
+
+          <!-- Header text inside card -->
+          <text x="50" y="60" font-family="Fraunces,serif" font-size="16" fill="#F2F1EF" font-weight="500">Engineered value uplift</text>
+          <text x="50" y="78" font-family="Outfit,sans-serif" font-size="11" fill="#9AA0A2">12-month readiness program · illustrative</text>
+
+          <!-- X axis labels -->
+          <g font-family="Outfit, sans-serif" font-size="10" fill="#9AA0A2">
+            <text x="60" y="372" text-anchor="middle">Now</text>
+            <text x="200" y="372" text-anchor="middle">+6mo</text>
+            <text x="340" y="372" text-anchor="middle">+12mo</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">The process</span>
+      <h2>From first call to <em>signed close.</em></h2>
+      <p class="sub">No fragmented broker / lender / lawyer chase. One coordinated team running a defined process.</p>
+    </div>
+    <div class="steps-row stagger">
+      <div class="step"><div class="step-no">01 · DISCOVERY</div><h4>Free valuation</h4><p>We look at your numbers honestly and tell you exactly what your agency is worth today — and what it could be worth.</p></div>
+      <div class="step"><div class="step-no">02 · READINESS</div><h4>Engineer the value up</h4><p>We fix what drags your multiple down — owner-dependency, concentration, undocumented systems, thin margins.</p></div>
+      <div class="step"><div class="step-no">03 · MARKETING</div><h4>Reach vetted buyers</h4><p>Confidential outreach to a curated pool of pre-qualified buyers with financing already arranged.</p></div>
+      <div class="step"><div class="step-no">04 · CLOSE</div><h4>Negotiate &amp; close</h4><p>We manage diligence, structuring, financing, and contracts end to end. You stay focused on the business.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEAD CAPTURE — SELLER INTAKE ============ -->
+<section class="lead" id="book">
+  <div class="wrap lead-wrap">
+    <div class="lead-grid">
+      <div class="lead-copy reveal-l">
+        <span class="sec-eyebrow">Free, no-obligation valuation</span>
+        <h2>Find out what your agency is <em>actually</em> worth.</h2>
+        <p>Tell us a little about your business and we'll come back with a defensible valuation range, a clear picture of what's holding it back, and the fastest realistic path to a strong exit.</p>
+        <ul class="lead-bullets">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Free, confidential, no obligation to list or sell</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Real numbers — not a generic multiple from a calculator</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Response within one business day</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Led by operators who've sold their own digital agency</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="lead-form lead-form-el reveal-r" data-form="seller">
+        <div class="form-fields">
+          <h3>Get your free valuation</h3>
+          <p class="sub">No commitment. We'll send a real number, not a sales pitch.</p>
+
+          <div class="form-row split">
+            <div>
+              <label>First name</label>
+              <input type="text" name="first_name" placeholder="Jane" required>
+            </div>
+            <div>
+              <label>Last name</label>
+              <input type="text" name="last_name" placeholder="Doe" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@agency.com" required>
+          </div>
+
+          <div class="form-row">
+            <label>Agency name</label>
+            <input type="text" name="agency" placeholder="Your agency" required>
+          </div>
+
+          <div class="form-row split">
+            <div>
+              <label>Annual revenue</label>
+              <select name="revenue" required>
+                <option value="">Select range</option>
+                <option value="<250k">Under $250K</option>
+                <option value="250k-500k">$250K – $500K</option>
+                <option value="500k-1m">$500K – $1M</option>
+                <option value="1m-3m">$1M – $3M</option>
+                <option value="3m-10m">$3M – $10M</option>
+                <option value="10m+">$10M+</option>
+              </select>
+            </div>
+            <div>
+              <label>Exit timeline</label>
+              <select name="timeline" required>
+                <option value="">Select timeline</option>
+                <option value="0-3mo">0–3 months</option>
+                <option value="3-12mo">3–12 months</option>
+                <option value="1-2yr">1–2 years</option>
+                <option value="exploring">Just exploring</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Anything we should know? (optional)</label>
+            <textarea name="message" placeholder="Service mix, recurring vs. project, anything that makes your agency distinctive..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-ember form-submit">Request my free valuation <span class="ar">→</span></button>
+
+          <div class="form-trust">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 4.5 3.5 8.5 8 10 4.5-1.5 8-5.5 8-10V6l-8-4z" stroke="#9AA0A2" stroke-width="2" stroke-linejoin="round"/></svg>
+            Strictly confidential — protected by NDA from first response
+          </div>
+        </div>
+
+        <div class="success-msg">
+          <div class="success-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#E8633A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>Request received.</h4>
+          <p>We'll review your information and send your valuation range within one business day.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Seller questions</span>
+      <h2>What sellers usually ask.</h2>
+    </div>
+    <div class="faq-wrap stagger">
+      <div class="faq-item"><button class="faq-q">How do you calculate my valuation? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">We start from your trailing profit and apply a multiple shaped by the factors buyers price: recurring vs. project revenue, client concentration, owner-dependency, margin health, and the strength of your systems. The estimator above shows the logic; a full Gunderson valuation gives you the defensible number and the roadmap to raise it.</div></div></div>
+      <div class="faq-item"><button class="faq-q">What if I'm not ready to sell yet? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">Perfect timing, actually. The earlier we start, the more value we can engineer. Our readiness program stabilizes the business and lifts your multiple before you ever go to market — whether your exit is next quarter or two years out.</div></div></div>
+      <div class="faq-item"><button class="faq-q">How confidential is this? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">Strictly confidential, end to end. Your financials and the fact that you're exploring an exit are protected under NDA from first contact, and your business is only presented to qualified, vetted buyers under appropriate protections.</div></div></div>
+      <div class="faq-item"><button class="faq-q">What does it cost to work with you? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">The initial valuation conversation is free and carries no obligation. Engagements are structured around the work involved and aligned with a successful outcome — we'll walk you through exactly how fees work for your situation on that first call, before you commit to anything.</div></div></div>
+      <div class="faq-item"><button class="faq-q">How long does a sale typically take? <span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">From engagement to close, expect 3–9 months depending on readiness, deal size, and financing structure. Pre-engineered sales with SBA-funded buyers close significantly faster than fragmented listings.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><img src="img/logo-mark.png" alt="Gunderson &amp; Partners"></span>
+          <span class="logo-txt"><span class="logo-name" style="color:#F2F1EF">GUNDERSON</span><span class="logo-sub">&amp; PARTNERS</span></span>
+        </a>
+        <p>The boutique mergers &amp; acquisitions firm built exclusively for digital agencies.</p>
+      </div>
+      <div class="foot-col"><h5>Sellers</h5><a href="sell.html">Sell an agency</a><a href="#calc">Free valuation</a><a href="#readiness">Readiness program</a><a href="#process">Our process</a></div>
+      <div class="foot-col"><h5>Buyers</h5><a href="buy.html">Buy an agency</a><a href="buy.html#calc">Returns calculator</a><a href="buy.html#financing">Financing &amp; SBA</a></div>
+      <div class="foot-col"><h5>Firm</h5><a href="index.html#why">Why Gunderson</a><a href="#faq">FAQ</a><a href="#book">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span class="logo-name">GUNDERSON &amp; PARTNERS</span>
+      <span>© 2026 Gunderson &amp; Partners. All rights reserved.</span>
+    </div>
+    <p class="disclaimer">Valuations and calculator outputs are illustrative estimates only and do not constitute an offer, appraisal, or guarantee of sale price. Information is general and not legal, tax, or financial advice.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+/* ============ SELL — VALUATION CALCULATOR ============ */
+(function(){
+  'use strict';
+  const fmt = n => {
+    n = Math.round(n);
+    if (n >= 1e6) return '$' + (n/1e6).toFixed(n % 1e6 === 0 ? 0 : 1) + 'M';
+    if (n >= 1e3) return '$' + Math.round(n/1e3) + 'K';
+    return '$' + n;
+  };
+
+  const rev = document.getElementById('rev');
+  const margin = document.getElementById('margin');
+  if (!rev || !margin) return;
+
+  let recur = 1.0, owner = 1.0, age = 1.0;
+
+  function bindSeg(id, setter) {
+    const buttons = document.querySelectorAll('#' + id + ' button');
+    buttons.forEach(b => {
+      b.addEventListener('click', () => {
+        buttons.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        setter(parseFloat(b.dataset.v));
+        calc();
+      });
+    });
+  }
+
+  function calc() {
+    const R = parseFloat(rev.value);
+    const M = parseFloat(margin.value) / 100;
+    const profit = R * M;
+
+    document.getElementById('revVal').textContent = fmt(R);
+    document.getElementById('marginVal').textContent = Math.round(M * 100) + '%';
+
+    // Base multiple scales gently with size, then quality factors adjust
+    const sizeFactor = Math.min(R / 5000000, 1);
+    const base = 2.3 + sizeFactor * 1.2; // 2.3 – 3.5 by size
+    let mult = base * recur * owner * age; // quality adjustments centered ~1.0
+    mult = Math.max(1.6, Math.min(mult, 5.5));
+
+    const mid = profit * mult;
+    const lo = mid * 0.85;
+    const hi = mid * 1.22;
+
+    // Upside: what a fully sale-ready version (recur=1.18, owner=1.15, age=1.08) would fetch
+    const readyMult = Math.max(1.6, Math.min(base * 1.18 * 1.15 * 1.08, 5.5));
+    const upside = Math.max(0, profit * readyMult - mid);
+
+    document.getElementById('profitOut').textContent = fmt(profit);
+    document.getElementById('multOut').textContent = mult.toFixed(1) + '×';
+    document.getElementById('valMid').textContent = fmt(mid);
+    document.getElementById('valRange').textContent = 'Range: ' + fmt(lo) + ' – ' + fmt(hi);
+    document.getElementById('upsideOut').textContent = (upside > 0 ? '+' : '') + fmt(upside);
+
+    // Pulse animation on the headline
+    if (window.__pulseEl) window.__pulseEl(document.getElementById('valMid'));
+  }
+
+  bindSeg('recurSeg', v => recur = v);
+  bindSeg('ownerSeg', v => owner = v);
+  bindSeg('ageSeg', v => age = v);
+
+  rev.addEventListener('input', calc);
+  margin.addEventListener('input', calc);
+
+  calc();
+})();
+</script>
+</body>
+</html>
